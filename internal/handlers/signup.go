@@ -1,7 +1,12 @@
 package handlers
 
-import "fmt"
+import (
+	"fmt"
 
-func HandleSignUp() {
+	"github.com/gin-gonic/gin"
+)
+
+func HandleSignUp(c *gin.Context) {
 	fmt.Println("hello from signup handler")
+
 }
