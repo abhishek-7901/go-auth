@@ -12,14 +12,14 @@ The service will be available at http://localhost:8080
 
 ### 1. Sign Up
 ```
-curl -X POST http://localhost:8080/api/auth/signup -H "Content-Type: application/json" -d '{"email":"konthalapalli@gmail.com", "password" : "abhishek"}'
-curl -X POST http://localhost:8080/api/auth/signup -H "Content-Type: application/json" -d '{"email":"ajith@gmail.com", "password" : "abhishek"}'
-curl -X POST http://localhost:8080/api/auth/signup -H "Content-Type: application/json" -d '{"email":"abhishek777@gmail.com", "password" : "abhishek"}'
+curl -X POST -H "Content-Type: application/json" -d '{"email":"konthalapalli@gmail.com", "password" : "abhishek"}' http://localhost:8080/api/auth/signup
+curl -X POST -H "Content-Type: application/json" -d '{"email":"ajith@gmail.com", "password" : "abhishek"}' http://localhost:8080/api/auth/signup
+curl -X POST -H "Content-Type: application/json" -d '{"email":"abhishek777@gmail.com", "password" : "abhishek"}' http://localhost:8080/api/auth/signup 
 ```
 
 ### 2. Sign In (Get JWT and Refresh Token)
 ```
-curl -X POST http://localhost:8080/api/auth/signin -H "Content-Type: application/json" -d '{"email":"konthalapalli@gmail.com", "password" : "abhishek"}'
+curl -X POST -H "Content-Type: application/json" -d '{"email":"konthalapalli@gmail.com", "password" : "abhishek"}' http://localhost:8080/api/auth/signin 
 ```
 Response will include `token` (JWT) and `refresh_token`.
 
@@ -52,4 +52,4 @@ curl -X POST -H "Content-Type: application/json" -d '{"refresh_token" : "cZYlveu
 
 ---
 
-- The SQLite database is persisted in the `data/` directory on your host.
+- The SQLite database is persisted in the `data/` directory on your container.
