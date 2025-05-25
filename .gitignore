@@ -11,6 +11,7 @@
 
 # Dependency directories (remove the comment below if you use Go modules)
 vendor/
+data/
 
 # Go workspace file
 go.work
