@@ -1,4 +1,4 @@
-package jwt
+package token
 
 import (
 	"go-auth/internal/models"
@@ -10,7 +10,7 @@ import (
 var jwtKey = []byte("your-secret-key") // This should come from config in production
 
 // GenerateToken generates a JWT token for a user
-func GenerateToken(user *models.User) (string, error) {
+func GenerateJWTtoken(user *models.User) (string, error) {
 	claims := jwt.MapClaims{
 		"user_id": user.ID,
 		"email":   user.Email,

@@ -3,7 +3,7 @@ package handlers
 import (
 	"go-auth/internal/database"
 	"go-auth/internal/models"
-	"go-auth/pkg/jwt"
+	"go-auth/pkg/token"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -42,7 +42,7 @@ func HandleSignin(c *gin.Context) {
 	}
 
 	// Generate JWT token
-	token, err := jwt.GenerateToken(&user)
+	token, err := token.GenerateJWTtoken(&user)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to generate token"})
 		return
