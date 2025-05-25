@@ -35,9 +35,10 @@ curl -X POST -H "Content-Type: application/json" -d '{"refresh_token" : "<REFRES
 ```
 Replace `<REFRESH_TOKEN>` with the refresh token from the signin response.
 
+```
 It should look something like the below: 
 curl -X POST -H "Content-Type: application/json" -d '{"refresh_token" : "cZYlveu-6G5t6bqwSnwKsGvsn2Q4BsGWSyw6gfGdR5o="}' http://localhost:8080/api/auth/refresh
-
+```
 
 
 ### 5. Revoke Token
@@ -46,10 +47,9 @@ curl -X POST -H "Content-Type: application/json" -d '{"refresh_token" : "cZYlveu
 ```
 Replace `<REFRESH_TOKEN>` with the refresh token you want to revoke.
 
+```
 It should look something like the below: 
 curl -X POST -H "Content-Type: application/json" -d '{"refresh_token" : "cZYlveu-6G5t6bqwSnwKsGvsn2Q4BsGWSyw6gfGdR5o="}' http://localhost:8080/api/auth/revoke
-
+```
 
 ---
-
-- The SQLite database is persisted in the `data/` directory on your container.
