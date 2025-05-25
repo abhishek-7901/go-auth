@@ -1,4 +1,4 @@
-package token
+package generateTokens
 
 import (
 	"crypto/rand"

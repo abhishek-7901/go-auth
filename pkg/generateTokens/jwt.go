@@ -1,4 +1,4 @@
-package token
+package generateTokens
 
 import (
 	"go-auth/internal/models"
@@ -7,7 +7,7 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 )
 
-var jwtKey = []byte("your-secret-key") // This should come from config in production
+var JwtKey = []byte("your-secret-key") // This should come from config in production
 
 // GenerateToken generates a JWT token for a user
 func GenerateJWTtoken(user *models.User) (string, error) {
@@ -17,5 +17,5 @@ func GenerateJWTtoken(user *models.User) (string, error) {
 		"exp":     time.Now().Add(24 * time.Hour).Unix(), // Token expires in 24 hours
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	return token.SignedString(jwtKey)
+	return token.SignedString(JwtKey)
 }
