@@ -1,0 +1,7 @@
+.git
+data
+*.swp
+*.out
+.vscode
+.idea
+*.DS_Store 
